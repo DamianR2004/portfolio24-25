@@ -1,0 +1,23 @@
+---
+import ProjectCard from "../components/ProjectData.astro";
+import ProjectData from "../data/projects.json";
+---
+
+<section class="project-card-container">
+<ul class="project-card-layout">
+    {ProjectData.map((project) => (
+        <ProjectCard
+            title={project.title}
+            dates={project.dates}
+            description={project.description}
+            images={project.images}
+        />
+    ))}
+</ul>
+</section>
+
+<style>
+    li{
+        height: 100vh;
+    }
+</style>
