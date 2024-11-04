@@ -50,8 +50,9 @@ html, body{
 	box-sizing: border-box;
 	font-family:'Arial Narrow Bold', sans-serif;
 	background-color: #333;
-	height: 100%;
 }
+
+
 
 .home {
 	display: grid;
@@ -59,6 +60,7 @@ html, body{
 	grid-template-columns: 1fr 1fr;
 	height: 100vh;
 	align-items: center;
+	min-height: 100vh;
 	padding: 0 1.5rem;
 	overflow: hidden;
 	grid-template-areas: 
@@ -109,11 +111,12 @@ html, body{
 	inset: 0;
 	list-style: none;
 	background: black;
-	transform: translateX(100%);
+	transform: translateX(100vw);
 	transition: transform 0.2s ease;
 	padding: 0;
 	margin: 0;
 	visibility: hidden;  
+	overflow: hidden;
 }
 
 .nav-link {
@@ -121,7 +124,7 @@ html, body{
 	place-self: center;
 	color: gray;
 	text-decoration: none;
-	font-size: 12vh;
+	font-size: 20vw;
 	padding: 10px;
 	display: inline-block;
 
@@ -133,11 +136,13 @@ html, body{
 #side-navbar:target {
 	transform: translateX(0);
 	visibility: visible;   
-	padding: 10px;             
+	padding: 10px;          
+	overflow: hidden;
+   
 }
 
 .home-weather{
-	position: fixed;
+	position: absolute;
 	bottom: 5%;
 	color: white;
 	grid-area: c;
