@@ -22,10 +22,10 @@
 		<section class="navbar-container">
 
 			<ul class="navbar" id="side-navbar">
-				<li><a href="/">Home</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a class="nav-link" href="/">/Home</a></li>
+				<li><a class="nav-link" href="/projects">/Projects</a></li>
+				<li><a class="nav-link" href="/about">/About</a></li>
+				<li><a class="nav-link" href="mailto:user@domain.com">/Contact</a></li>
 				<li><a href="#home" class="navbar-button">Close</a></li>
 			</ul>
 
@@ -100,33 +100,40 @@ html, body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
-	&a:hover {
-		cursor: pointer;
-	}
-
 }
 
 .navbar {
 	position: fixed;
 	z-index: 100;
 	inset: 0;
-	width: 100%;
-	height: 100vh;
 	list-style: none;
 	background: black;
 	transform: translateX(100%);
 	transition: transform 0.2s ease;
 	padding: 0;
 	margin: 0;
-	visibility: hidden;                
+	visibility: hidden;  
 }
 
+.nav-link {
+	display: flex;
+	place-self: center;
+	color: gray;
+	text-decoration: none;
+	font-size: 12vh;
+	padding: 10px;
+	display: inline-block;
+
+	&:hover, &:focus {
+		animation: link-hover 0.5s;
+		color: white;
+	}
+}
 #side-navbar:target {
-	transform: translateX(0);	transform: translateX(0);
-	visibility: visible;                 
+	transform: translateX(0);
+	visibility: visible;   
+	padding: 10px;             
 }
-
 
 .home-weather{
 	position: fixed;
@@ -135,6 +142,18 @@ html, body{
 	grid-area: c;
 }
 
+@keyframes link-hover {
+	0% {
+		scale: 1;
+	}
+	50% {
+		scale: 1.1;
+	}
+
+	100% {
+		scale: 1;
+	}
+}
 
 @keyframes fadeFirstName {
 	0% {
