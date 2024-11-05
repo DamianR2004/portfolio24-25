@@ -1,0 +1,65 @@
+
+<ul class="navbar" id="side-navbar">
+  <li><a class="nav-link" href="/" aria-label="Home">/Home</a></li>
+  <li><a class="nav-link" href="/projects" aria-label="Projects">/Projects</a></li>
+  <li><a class="nav-link" href="/about" aria-label="About">/About</a></li>
+  <li><a class="nav-link" href="mailto:user@domain.com" aria-label="Contact">/Contact</a></li>
+  <li><a href="#home" class="navbar-button" aria-label="Close menu">Close</a></li>
+</ul>
+
+<a href="#side-navbar" class="navbar-button" aria-label="Open menu">
+  Open
+</a>
+
+<style>
+  .navbar-button {
+	position: fixed;
+	z-index: 99;
+	background: white;
+	border: none;
+	top: 2rem;
+	right: 2rem;
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	grid-area: b;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 100;
+	inset: 0;
+	list-style: none;
+	background: #366339;
+	transform: translateX(100%);
+	transition: transform 0.2s ease;
+	padding: 0;
+	margin: 0;
+	visibility: hidden;  
+	overflow: hidden;
+}
+
+.nav-link {
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-size: 19vw;
+	padding: 15px;
+	text-align: center;
+
+	&:hover, &:focus {
+		animation: link-hover 0.5s;
+	}
+}
+#side-navbar:target {
+	transform: translateX(0);
+	visibility: visible;               
+}
+
+</style>

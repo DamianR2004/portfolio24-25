@@ -1,11 +1,14 @@
 ---
-
+import Header from '../components/SideBar.astro';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Damian Romeijn</title>
@@ -18,25 +21,8 @@
 				<h2>Romeijn</h2>
 				<h3>Frontend Developer & Designer</h3>
 			</section>
-
-			<ul class="navbar" id="side-navbar">
-				<li><a class="nav-link" href="/">/Home</a></li>
-				<li><a class="nav-link" href="/projects">/Projects</a></li>
-				<li><a class="nav-link" href="/about">/About</a></li>
-				<li><a class="nav-link" href="mailto:user@domain.com">/Contact</a></li>
-				<li><a href="#home" class="navbar-button">Close</a></li>
-			</ul>
-
-			<a href="#side-navbar" tabindex="1" class="navbar-button">
-				Open
-			</a>
 		</section>
-
-		<section class="home-weather">
-			<h4>Weather amsterdam proto</h4>
-		</section>
-
-	</section>
+		<Header />
 	</body>
 </html>
 
@@ -46,10 +32,114 @@ html, body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family:'Arial Narrow Bold', sans-serif;
+	font-family: "Open Sans";
 	background-color: coral;
+	animation: body-delay 1s;
 }
 
+body::before{
+	content: '';
+	font-size: 15vw;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  animation: fade-out 6s ease-in ;
+}
+
+@keyframes fade-out {
+  0% {
+		content: 'Welcome!';
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+		opacity: 1;
+  }
+
+	10% {
+		content: 'Welkom!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	20% {
+		content: 'Willkommen!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	30% {
+		content: 'Bienvenido!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	40% {
+		content: 'Привет!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	50% {
+		content: 'Välkommen!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	60% {
+		content: 'ようこそ!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
+	70% {
+		content: '欢迎!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+		scale: 1;
+	}
+
+	80% {
+		content: 'Bienvenue!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+		scale: 1;
+	}
+
+	90% {
+		height: 100vh;
+		width: 100vw;
+		background-color: coral;
+		opacity: 1;
+		border-radius: 15px;
+		scale: 0;
+	}
+
+	100% {
+		background-color: coral;
+		height: 100vh;
+		width: 100vw;
+		opacity: 0;
+		scale: 0;
+	}
+}
 
 
 .home {
@@ -69,7 +159,7 @@ html, body{
 .home-name{
 	display: flex;
 	flex-direction: column;
-	color: #1a1718;
+	color: #141414;
 	grid-area: a;
 
 	h1, h2{
@@ -86,56 +176,6 @@ html, body{
 	}
 }
 
-.navbar-button {
-	position: fixed;
-	z-index: 99;
-	background: white;
-	border: none;
-	top: 2rem;
-	right: 2rem;
-	height: 80px;
-	width: 80px;
-	border-radius: 50%;
-	grid-area: b;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.navbar {
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	z-index: 100;
-	inset: 0;
-	list-style: none;
-	background: #366339;
-	transform: translateX(100%);
-	transition: transform 0.2s ease;
-	padding: 0;
-	margin: 0;
-	visibility: hidden;  
-	overflow: hidden;
-}
-
-.nav-link {
-	display: flex;
-	color: white;
-	text-decoration: none;
-	font-size: 19vw;
-	padding: 15px;
-	text-align: center;
-
-	&:hover, &:focus {
-		animation: link-hover 0.5s;
-	}
-}
-#side-navbar:target {
-	transform: translateX(0);
-	visibility: visible;               
-}
-
 .home-weather{
 	position: absolute;
 	bottom: 5%;
@@ -143,18 +183,6 @@ html, body{
 	grid-area: c;
 }
 
-@keyframes link-hover {
-	0% {
-		scale: 1;
-	}
-	50% {
-		scale: 1.1;
-	}
-
-	100% {
-		scale: 1;
-	}
-}
 
 @keyframes fadeFirstName {
 	0% {
