@@ -69,7 +69,7 @@ html, body{
 .home-name{
 	display: flex;
 	flex-direction: column;
-	color: black;
+	color: #1a1718;
 	grid-area: a;
 
 	h1, h2{
@@ -104,6 +104,9 @@ html, body{
 
 .navbar {
 	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	z-index: 100;
 	inset: 0;
 	list-style: none;
@@ -116,31 +119,21 @@ html, body{
 	overflow: hidden;
 }
 
-@media (max-width: 820px) {
-	.navbar-button {
-		top: calc(env(safe-area-inset-top) + 2rem);
-		right: calc(env(safe-area-inset-right) + 2rem);
-	}
-}
-
 .nav-link {
 	display: flex;
-	place-self: center;
-	color: gray;
+	color: white;
 	text-decoration: none;
-	font-size: 18vw;
+	font-size: 19vw;
 	padding: 10px;
-	display: inline-block;
+	text-align: center;
 
 	&:hover, &:focus {
 		animation: link-hover 0.5s;
-		color: white;
 	}
 }
 #side-navbar:target {
 	transform: translateX(0);
-	visibility: visible;   
-	padding: 10px;             
+	visibility: visible;               
 }
 
 .home-weather{
