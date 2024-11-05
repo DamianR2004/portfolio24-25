@@ -44,19 +44,18 @@ body::before{
   position: fixed;
   inset: 0;
   z-index: 110;
-  animation: fade-out 6.2s forwards;
+  animation: fade-out 4s forwards;
 }
 
 @keyframes fade-out {
   0% {
-		content: 'Welkom!';
 		height: 100vh;
 		width: 100vw;
 		background-color: #366339;
 		opacity: 1;
   }
 
-	10% {
+	3% {
 		content: 'Welcome!';
 		opacity: 1;
 		height: 100vh;
@@ -81,14 +80,6 @@ body::before{
 	}
 
 	40% {
-		content: 'مرحباً!';
-		opacity: 1;
-		height: 100vh;
-		width: 100vw;
-		background-color: #366339;
-	}
-
-	50% {
 		content: 'Välkommen!';
 		opacity: 1;
 		height: 100vh;
@@ -96,8 +87,16 @@ body::before{
 		background-color: #366339;
 	}
 
+	50% {
+		content: 'Welkom!';
+		opacity: 1;
+		height: 100vh;
+		width: 100vw;
+		background-color: #366339;
+	}
+
 	60% {
-		content: 'Bienvenido!';
+		content: '欢迎!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
@@ -105,7 +104,7 @@ body::before{
 	}
 
 	70% {
-		content: '欢迎!';
+		content: 'Bienvenue!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
@@ -114,7 +113,6 @@ body::before{
 	}
 
 	80% {
-		content: 'Bienvenue!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
