@@ -34,7 +34,6 @@ html, body{
 	box-sizing: border-box;
 	font-family: "Open Sans";
 	background-color: coral;
-	animation: body-delay 1s;
 }
 
 body::before{
@@ -44,8 +43,8 @@ body::before{
   place-content: center;
   position: fixed;
   inset: 0;
-  z-index: 101;
-  animation: fade-out 6s ease-in ;
+  z-index: 110;
+  animation: fade-out 6s forwards ;
 }
 
 @keyframes fade-out {
@@ -74,7 +73,7 @@ body::before{
 	}
 
 	30% {
-		content: 'Bienvenido!';
+		content: 'ようこそ!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
@@ -82,7 +81,7 @@ body::before{
 	}
 
 	40% {
-		content: 'Привет!';
+		content: 'مرحباً!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
@@ -98,7 +97,7 @@ body::before{
 	}
 
 	60% {
-		content: 'ようこそ!';
+		content: 'Bienvenido!';
 		opacity: 1;
 		height: 100vh;
 		width: 100vw;
@@ -132,15 +131,20 @@ body::before{
 		scale: 0;
 	}
 
-	100% {
+	99% {
 		background-color: coral;
 		height: 100vh;
 		width: 100vw;
 		opacity: 0;
 		scale: 0;
+		z-index: 110;
+	}
+
+	100% {
+		opacity: 0;
+		z-index: -1;
 	}
 }
-
 
 .home {
 	display: grid;
