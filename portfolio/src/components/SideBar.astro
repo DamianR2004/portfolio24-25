@@ -1,4 +1,3 @@
-
 <ul class="navbar" id="side-navbar">
   <li><a class="nav-link" href="/" aria-label="Home">/Home</a></li>
   <li><a class="nav-link" href="/projects" aria-label="Projects">/Projects</a></li>
@@ -10,6 +9,10 @@
 <a href="#side-navbar" class="navbar-button" aria-label="Open-menu">
   Open
 </a>
+
+<div class="time">
+	<p>11:42</p>
+</div>
 
 <style>
   .navbar-button {
@@ -26,6 +29,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: black;
+	transition: .2s;
 }
 
 .navbar {
@@ -43,6 +48,11 @@
 	margin: 0;
 	visibility: hidden;  
 	overflow: hidden;
+
+}
+
+.navbar-button:hover{
+scale: 1.1;
 }
 
 .nav-link {
@@ -62,4 +72,12 @@
 	visibility: visible;               
 }
 
+.time{
+	height: 62px;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
+	width: 100%;
+	border-top: 10px solid black;
+}
 </style>
