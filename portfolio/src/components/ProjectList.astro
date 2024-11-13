@@ -1,10 +1,10 @@
 ---
-import Data from "../data/projects.json";
+import data from "../data/projects.json";
 ---
 
 <section class="project-list">
   <h4>Project</h4>
-  {Data.map((project) => ( 
+  {data.map((project) => ( 
     <h2> <a href={`/projects/${project.key}`}>
         <TitleData
             title={project.title}
@@ -18,5 +18,4 @@ import Data from "../data/projects.json";
 .project-list{
   display: flex;
 }
-  
 </style>
