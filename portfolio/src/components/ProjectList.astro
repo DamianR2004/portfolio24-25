@@ -1,0 +1,22 @@
+---
+import Data from "../data/projects.json";
+---
+
+<section class="project-list">
+  <h4>Project</h4>
+  {Data.map((project) => ( 
+    <h2> <a href={`/projects/${project.key}`}>
+        <TitleData
+            title={project.title}
+        />
+        </a>
+    </h2>
+  ))}
+</section>
+
+<style>
+.project-list{
+  display: flex;
+}
+  
+</style>
