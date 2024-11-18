@@ -1,8 +1,8 @@
-<ul class="navbar" id="side-navbar">
-  <li><a class="nav-link" href="/" aria-label="Home">/Home</a></li>
-  <li><a class="nav-link" href="/projects" aria-label="Projects">/Projects</a></li>
-  <li><a class="nav-link" href="/about" aria-label="About">/About</a></li>
-  <li><a class="nav-link" href="mailto:damianromeijn@gmail.com" aria-label="Contact">/Contact</a></li>
+ <ul class="navbar" id="side-navbar">
+  <li><a class="nav-link" href="/" aria-label="Home">Home</a></li>
+  <li><a class="nav-link" href="/projects" aria-label="Projects">Projects</a></li>
+  <li><a class="nav-link" href="/about" aria-label="About">About</a></li>
+  <li><a class="nav-link" href="mailto:damianromeijn@gmail.com" aria-label="Contact">Contact</a></li>
   <li><a href="#home" class="navbar-button" aria-label="Close-menu">Close</a></li>
 </ul>
 
@@ -10,19 +10,15 @@
   Open
 </a>
 
-<div class="title">
-	<h4>FRONTEND DESIGNER & DEVELOPER</h4>
-</div>
-
 <style>
   .navbar-button {
 	position: fixed;
 	z-index: 99;
 	background: black;
-	top: 2rem;
-	right: 2rem;
-	height: 60px;
-	width: 60px;
+	top: 3rem;
+	right: 3rem;
+	height: 90px;
+	width: 90px;
 	border-radius: 75% 0;
 	display: flex;
 	align-items: center;
@@ -58,11 +54,12 @@ scale: 1.1;
 .nav-link {
 	display: inline-block;
 	color: white;
-	text-decoration: none;
 	font-size: 19vw;
 	padding: 20px 40px;
+	font-weight:400;
 	text-align: center;
 	transition: .25s;
+	text-decoration: none;
 
 	&:hover, &:focus {
 		transform: translate(10%, 0%);
@@ -71,24 +68,6 @@ scale: 1.1;
 #side-navbar:target {
 	transform: translateX(0);
 	visibility: visible;               
-}
-
-.title{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 62px;
-	position: absolute;
-	bottom: 0;
-	background-color: #FF4002;
-	width: 100%;
-	border-top: 10px solid black;
-	
-
-	& h4{
-		font-weight: bold;
-		font-size: 4vw;
-	}
 }
 
 @media screen and (min-width: 700px) {

@@ -1,21 +1,38 @@
-<!-- ---
+---
+import ProjectTitle from "../components/ProjectData.astro"
 import data from "../data/projects.json";
 ---
 
-<section class="project-list">
-  <h4>Project</h4>
-  {data.map((project) => ( 
-    <h2> <a href={`/projects/${project.key}`}>
-        <TitleData
-            title={project.title}
-        />
+<section class="project-list-container">
+  <ul class="project-list">
+    {data.map((project) => ( 
+      <li><a href={`/projects/${project.key}`}>
+          <ProjectTitle
+              title={project.title}
+          />
         </a>
-    </h2>
-  ))}
+      </li>
+    ))}
+  </ul>
 </section>
 
 <style>
-.project-list{
-  display: flex;
+
+.project-list-container{
+  height: fit-content;
+  background-color: #FF4002;
 }
-</style> -->
+.project-list{
+  margin: 0;
+}
+li, a{
+  margin: 0;
+  padding: 0 30px;
+  font-size: 8vw;
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid black;
+  transition: .2s;
+}
+
+</style> 

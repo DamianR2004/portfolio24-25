@@ -1,6 +1,8 @@
 ---
 import Header from '../components/SideBar.astro';
 import Eyes from '../components/EyeBody.astro';
+import ProjectList from '../components/ProjectList.astro';
+import Title from '../components/NameTitle.astro';
 ---
 
 <html lang="en">
@@ -13,22 +15,31 @@ import Eyes from '../components/EyeBody.astro';
 		<title>Damian Romeijn</title>
 	</head>
 	<body>
-		<Header />
-		<Eyes />
+		<header>
+			<Header />
+		</header>
+		<main>
+			<Eyes />
+			<Title />
+			<ProjectList/>
+		</main>
+		
+
 	</body>
 </html>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: system-ui, Helvetica, sans-serif;
+	font-family: 'Inter', 'Times New Roman';
 	background-color: #366339;
 }
 
- body::before{
+ /* body::before{
 	content: '';
 	font-size: 15vw;
   display: grid;
@@ -37,7 +48,7 @@ body{
   inset: 0;
   z-index: 110;
   animation: fade-out 3.8s forwards;
-} 
+}  */
 @keyframes fade-out {
   0% {
 		height: 100vh;

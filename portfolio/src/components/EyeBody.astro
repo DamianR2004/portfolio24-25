@@ -17,16 +17,20 @@
 </section>
 
 <style>
+
+.home {
+  height: calc(100dvh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .eyes{
-	position: absolute;
 	width: 100%;
-	top: 50%;
-	transform: translateY(-50%);
 	text-align: center;
 }
 
 .eyes h1, h2{
-  font-size: 10vw;
+  font-size: 12vw;
   font-weight: 1000;
   margin: 0;
   padding: 0;
@@ -106,5 +110,68 @@
     border: 7.5px solid white;
     background-color: #366339;
   }
+}
+
+@media screen and (min-width: 700px) {
+    .eye{
+			width: 150px;
+      height: 150px;
+      margin: 50px;
+      
+    }
+    .ball {
+    height: 50px;
+	  width: 50px;
+    }
+
+    @keyframes movingeyes{
+      0%{
+    top: 60%;
+    left: 60%;
+    border: 15px solid white;
+    background-color: #366339;
+  }
+
+  21%{
+    top: 70%;
+    left: 50%;
+    border: 15px solid white;
+    background-color: #FF4002
+  }
+
+  25%{
+    top: 65%;
+    left: 60%;
+    background-color: black;
+    border: 15px solid black;
+  }
+
+  29%{
+    border: 15px solid white;
+    background-color: blueviolet;
+  }
+
+  50%{
+    top: 50%;
+    left: 67%;
+    border: 15px solid white;
+    background-color: teal;
+  }
+
+  75%{
+    top: 60%;
+    left: 80%;
+    border: 15px solid white;
+    background-color: #FF4002;
+    scale: 1;
+  }
+
+  100%{
+    top: 60%;
+    left: 60%;
+    border: 15px solid white;
+    background-color: #366339;
+  }
+}
 }
 </style>
