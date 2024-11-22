@@ -19,7 +19,7 @@ import data from "../data/projects.json";
 <style>
 
 .project-list-container {
-  height: 200dvh;
+  height: calc(100dvh + 10px);
   background-color: #FF4002;
 }
 
@@ -41,24 +41,5 @@ a {
   color: black;
   gap: 2em;
 }
-
-body {
-  background-color: green; /* Ensure the body background is green */
-}
-
-@keyframes reveal {
-	from {
-		opacity: .2;
-    transform: translateX(0);
-
-	to {
-		opacity: 1;
-    transform: translateX(0 , 10%);
-
-	}
-}
-}
-
-
 
 </style> 
