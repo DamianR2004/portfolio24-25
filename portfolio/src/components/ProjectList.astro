@@ -3,7 +3,7 @@ import ProjectTitle from "../components/ProjectData.astro"
 import data from "../data/projects.json";
 ---
 
-<section class="project-list-container">
+<section class="project-list-container" id="project-list-container">
   <ul class="project-list">
     {data.map((project) => ( 
       <li><a href={`/projects/${project.key}`}>
@@ -18,21 +18,47 @@ import data from "../data/projects.json";
 
 <style>
 
-.project-list-container{
-  height: fit-content;
+.project-list-container {
+  height: 200dvh;
   background-color: #FF4002;
 }
-.project-list{
+
+.project-list {
   margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
-li, a{
-  margin: 0;
+
+li {
   padding: 0 30px;
-  font-size: 8vw;
+  font-size: 5vw;
+  border-bottom: 3px solid black;
+  transition: 0.2s;
+}
+
+a {
   text-decoration: none;
   color: black;
-  border-bottom: 3px solid black;
-  transition: .2s;
+  gap: 2em;
 }
+
+body {
+  background-color: green; /* Ensure the body background is green */
+}
+
+@keyframes reveal {
+	from {
+		opacity: .2;
+    transform: translateX(0);
+
+	to {
+		opacity: 1;
+    transform: translateX(0 , 10%);
+
+	}
+}
+}
+
+
 
 </style> 
