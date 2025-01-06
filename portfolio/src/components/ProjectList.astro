@@ -36,16 +36,32 @@ li {
   transition: 0.2s;
 }
 
-a {
+a{
   text-decoration: none;
   color: black;
   gap: 2em;
+  animation: boo running;
+  animation-timeline: view();
+  animation-range: 0% , 40%;
 }
+
 
 @media (width < 1000px){
 a{
   font-size:10vw;
-  text-transform: ;
+  animation: boo running;
+  animation-timeline: view();
+  animation-range: 0% 100%;
 }
+}
+
+@keyframes boo{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
 
 </style> 
